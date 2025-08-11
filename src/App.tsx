@@ -9,7 +9,7 @@ function App() {
     /* API CALL */
     const domain = import.meta.env.VITE_CAMERA_API_DOMAIN;
     useEffect(() => {
-        fetch(`${domain}/api/cameras`)
+        fetch(`/api/cameras`)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error("Network response was not ok");
