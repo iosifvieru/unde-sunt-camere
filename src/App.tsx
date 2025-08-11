@@ -1,4 +1,3 @@
-import "./App.css";
 import Map from "./components/Map";
 import { useEffect, useState } from "react";
 import { type CameraData } from "./cameradata";
