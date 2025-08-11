@@ -1,0 +1,12 @@
+.map-container {
+  height: 70%;
+  width: 70%;
+
+  border-color: #999;
+  border-style: dashed;
+}
+
+.leaflet-container{
+  height: 100%;
+  width: 100%;
+}
