@@ -12,3 +12,15 @@ html, body, #root {
   align-items: center;
   text-align: center;
 }
+
+h1 {
+  animation: colorchange 3s infinite;
+}
+
+@keyframes colorchange {
+  0%   { color: red; }
+  25%  { color: orange; }
+  50%  { color: green; }
+  75%  { color: blue; }
+  100% { color: red; }
+}

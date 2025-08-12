@@ -4,6 +4,7 @@ import { type CameraData } from "./cameradata";
 
 function App() {
     const [cameraData, setCameraData] = useState<CameraData[]>([]);
+    const [error, setError] = useState(false);
 
     /* API CALL */
     const domain = import.meta.env.VITE_CAMERA_API_DOMAIN;
@@ -12,6 +13,7 @@ function App() {
             .then((response) => {
                 if (!response.ok) {
                     throw new Error("Network response was not ok");
+                    setError(true);
                 }
                 return response.json();
             })
@@ -27,10 +29,23 @@ function App() {
                 }));
                 setCameraData(mapped);
             })
-            .catch((error) => console.error("Fetch error:", error));
+            .catch((error) => {
+                console.error("Fetch error:", error);
+                setError(true);
+            });
     }, [domain]);
 
-    return <Map cameras={cameraData} />;
+    return (
+        <>
+            {error && (
+                <h1>
+                    Hei.. stiu ca iti place site-ul dar deocamdata partea de
+                    backend doarme :(
+                </h1>
+            )}
+            <Map cameras={cameraData} />;
+        </>
+    );
 }
 
 export default App;
