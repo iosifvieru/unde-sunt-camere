@@ -24,3 +24,13 @@ h1 {
   75%  { color: blue; }
   100% { color: red; }
 }
+
+a {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
